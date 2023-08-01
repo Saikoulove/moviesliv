@@ -1,0 +1,15 @@
+.flex-header{
+    background: #FCFCFC;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 5.625rem;
+}
+.logo{
+    width: 13rem;
+    height: 40px;
+}
+.chevronDown{
+    margin-bottom: 15px;
+    margin-left: 5px;
+}

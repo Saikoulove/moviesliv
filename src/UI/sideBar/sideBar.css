@@ -1,0 +1,19 @@
+.sidebar-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sidebar-items-text{
+    color: rgba(112, 111, 111, 0.90);
+    font-size: 14px;
+    font-family: Ubuntu;
+   
+}
+
+.sidebar-items-home{
+    margin-inline: -16px;
+    padding-inline: 15px;
+    margin-top: -15px;
+    border-radius: 10px 10px 0 0;
+}
