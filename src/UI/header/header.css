@@ -12,4 +12,30 @@
 .chevronDown{
     margin-bottom: 15px;
     margin-left: 5px;
+    cursor: pointer;
 }
+
+  
+  /* Ajoutez ce style pour positionner le NavbarDropDown en dessous de l'icône du chevronDown */
+  /* .navbar-dropdown-container {
+    position: absolute;
+    right: 0;
+    top: 150%;
+    padding: 0.5em 1em;
+    z-index: 2;
+  } */
+  .navbar-dropdown-container {
+    position: relative; /* Utilisez le positionnement relatif */
+    display: inline-block; /* Utilisez display: inline-block pour que le conteneur prenne la largeur de son contenu */
+  }
+  
+  /* Ajustez les marges pour le positionnement */
+  .navbar-dropdown-container > div {
+    position: absolute;
+    top: 100%; /* Place le composant en dessous de l'icône du chevronDown */
+    left: -5px; /* Ajustez la valeur pour positionner le composant par rapport à l'icône */
+    background: #FCFCFC; /* Ajoutez une couleur de fond pour le composant */
+    padding: 10px; /* Ajoutez un padding pour espacer le contenu */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre pour un effet de décalage */
+    min-width: 120px; /* Ajustez la largeur minimale du composant */
+  }

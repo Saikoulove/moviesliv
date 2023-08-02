@@ -1,0 +1,59 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 10px 24px;
+  padding-bottom: 130px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  
+}
+.modal-content{
+    display: flex;
+    flex-direction: row;
+}
+.modal-content-video{
+    background: #F3F3F3;
+     border-radius: 4px;
+     padding-inline: 24px;
+     width: 400px;
+     height: 312px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.flex-vote{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+  }
+.flex-vote-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-vote-text{
+    color: rgba(29,39,73,0.90);
+    font-size: 1rem;
+    font-family: Ubuntu;
+    font-weight: 400;
+  }
+
+.description{
+    color: rgba(29,39,73,0.80);
+    font-size: 16;
+    font-family: Ubuntu;
+    font-weight: 400;
+}
+
+.button-ajout-panier{
+    background: linear-gradient(180deg, #F28F00 0%, #EA580C 100%);
+    border-radius: 5px;
+    color: white;
+    padding: 9px 12px;
+    border: none;
+}
+
+/* Effet sombre pour les autres éléments lorsque la modale est affichée */
+

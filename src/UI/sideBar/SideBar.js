@@ -8,7 +8,7 @@ import like from "../../assets/images/Heart.svg";
 import "./sideBar.css";
 function SideBar () {
     return (  
-        <Card padding= "16px" width= "16.89rem" margin= "20px">
+        <Card padding= "16px" width= "16.89rem" margin= "10px 0px">
             <div>
                 <div className="sidebar-items sidebar-items-home" style={{background: "#1B274C"}} >
                     <img src={home} alt="icone home" />
