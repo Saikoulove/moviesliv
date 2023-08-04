@@ -17,7 +17,7 @@
     color: #1B274C;
     font-size: 1.25rem;
     margin-block: 1.875rem;
-    font-family: ubuntu;
+    
 }
 
 .form{
@@ -42,6 +42,8 @@
     padding: 0.56rem 0.75rem;
     border: none;
     margin-top: 0.43rem;
+   
+    
 
  
   
@@ -69,8 +71,12 @@
 } */
 .text-forgot{
     text-align:right;
-    margin-right: -13px;
+    margin-right: -8px;
     color: #656976;
     font-size: 0.875rem;
-    font-family: Ubuntu;
+    text-decoration: none;
+}
+
+.error-message{
+    color: red;
 }

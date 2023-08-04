@@ -1,6 +1,36 @@
+import { useState } from "react";
 import logo from "../../assets/images/MoviesLibLogo.png"
 import "./login.css";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 function Login () {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+    
+        axios
+          .get(`http://localhost:8000/users?email=${email}&password=${password}`)
+          .then((response) => {
+            //console.log(response.data)
+            if (response.data.length === 1) {
+              // Connexion réussie
+              const user = response.data[0];
+              localStorage.setItem("user", JSON.stringify(user));
+              navigate("/movies");
+            } else {
+              setErrorMessage("Email ou mot de passe incorrect");
+            }
+          })
+          .catch((error) => {
+            console.error("Erreur login:", error);
+            setErrorMessage("Une erreur s'est produite lors de la connexion. Veuillez réessayer plus tard.");
+          });
+      };
 
     return (  
        
@@ -10,18 +40,27 @@ function Login () {
                 <h1 className="text-bienvenue">Welcom back</h1>
             </div>
             <div className="form">
-                <form action="">
+                <form onSubmit={handleLogin}>
                     <div className="form-column">
-                        <label for="email" className="form-label">E-mail</label>
-                        <input type="text" placeholder="Enter your email" className="form-input" />
+                        <label htmlFor="email" className="form-label">E-mail</label>
+                        <input type="email" placeholder="Enter your email" 
+                               className="form-input"
+                               value={email}
+                               onChange={(e) => setEmail(e.target.value)} />
                         
 
                     </div> <br/>
                     <div className="form-column">
-                        <label for="password" className="form-label">Password</label>
-                        <input type="password" placeholder="Enter password"  className="form-input"/>
+                        <label htmlFor="password" className="form-label">Password</label>
+                        <input type="password" placeholder="Enter password"  
+                               className="form-input"
+                               value={password}
+                               onChange={(e) => setPassword(e.target.value)}/>
                     </div>
-                    <p className="text-forgot">I forgot my password</p>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                    <p className="text-forgot">
+                        <Link to="#"className="text-forgot">Forgot my password</Link>
+                    </p>
                     
                     <button className="form-button"><span className="form-button-text">Login Now</span> </button>
                 </form>

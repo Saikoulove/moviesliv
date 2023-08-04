@@ -1,24 +1,25 @@
 
+import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './pages/login/Login';
 import MoviesList from './pages/moviesList/MoviesList';
-import Carduser from './UI/cardUser/CardUser';
-import Header from './UI/header/Header';
-import Movies from './UI/movies/Movies';
-import MyCart from './UI/mycart/MyCart';
-import NavbarDropDown from './UI/navbarDropDown/NavbarDropDown';
-import SideBar from './UI/sideBar/SideBar';
+import { useEffect } from 'react';
+
+
 
 function App() {
+ 
   return (
+    
     <div className="App">
-        {/* <Login /> */}
-        {/* <NavbarDropDown />
-        <Carduser />
-       <MyCart /> 
-        <SideBar /> 
-         <Movies />
-        <MyCart />  */}
-        <MoviesList />
+        <BrowserRouter > 
+            <Routes>
+               <Route path="/" element={<Navigate to="/login" />} /> 
+               <Route path='/login' element = {<Login/>}></Route>
+               <Route exact path='/movies' element={<MoviesList />}></Route>
+            </Routes>
+
+        </BrowserRouter>
+ 
     </div>
   );
 }

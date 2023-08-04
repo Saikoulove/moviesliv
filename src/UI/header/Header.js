@@ -18,9 +18,7 @@ function Header() {
                 <img src={chevronDown} alt = "chevrondown" className="chevronDown"  onClick={toggleDropdown}/>
             </div>
             {isDropdownVisible && 
-            <div>
-                <NavbarDropDown />
-             </div>}
+                <NavbarDropDown /> }
         </div>
     );
 }
